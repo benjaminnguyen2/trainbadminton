@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+	font-family: 'Daggersquare';
+	src: url('/fonts/daggersquare.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--background: #ffffff;
+	--foreground-dark: #233d4d;
+	--foreground-light: #619b8a;
+	--highlight: #fe7f2d;
+	--highlight-dark: #a1c181;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	color: var(--foreground-dark);
+}
+
+p,
+li,
+button {
+	font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+a {
+	text-decoration: none;
+}

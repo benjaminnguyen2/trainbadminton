@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Home",
+		"url": "/",
+		"subnav": []
+	},
+	{
+		"name": "Guides",
+		"url": "/guides",
+		"subnav": [
+			{
+				"name": "Racket",
+				"url": "/guides/racket",
+				"subnav": []
+			},
+			{
+				"name": "Shoes",
+				"url": "/guides/shoes",
+				"subnav": []
+			},
+			{
+				"name": "Skills",
+				"url": "/guides/skills",
+				"subnav": []
+			}
+		]
+	},
+	{
+		"name": "About",
+		"url": "/about",
+		"subnav": []
+	},
+	{
+		"name": "Login",
+		"url": "/login",
+		"subnav": []
+	}
+]
