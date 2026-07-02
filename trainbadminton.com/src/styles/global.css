@@ -24,9 +24,15 @@ html {
 	color: var(--foreground-dark);
 }
 
+ul {
+	list-style: none;
+}
+
+a,
 p,
 li,
 button {
+	color: var(--foreground-dark);
 	font-family: "Roboto", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
@@ -35,6 +41,16 @@ button {
 		"wdth" 100;
 }
 
-a {
+a,
+a:link,
+a:visited {
 	text-decoration: none;
+	color: var(--foreground-dark);
+}
+
+button {
+	padding: 0.5rem 1rem;
+	background: none;
+	border-radius: 0.2rem;
+	border: 2px solid var(--foreground-dark);
 }
