@@ -5,12 +5,42 @@
 		"subnav": []
 	},
 	{
+		"name": "About",
+		"url": "/about",
+		"subnav": []
+	},
+	{
 		"name": "Guides",
-		"url": "/guides",
+		"url": "",
 		"subnav": [
+			{
+				"name": "Skills",
+				"url": "/guides/skills",
+				"subnav": []
+			},
+			{
+				"name": "Tactics",
+				"url": "/guides/tactics",
+				"subnav": []
+			},
+			{
+				"name": "Injury prevention",
+				"url": "/guides/prevention",
+				"subnav": []
+			},
 			{
 				"name": "Racket",
 				"url": "/guides/racket",
+				"subnav": []
+			},
+			{
+				"name": "String",
+				"url": "/guides/racket",
+				"subnav": []
+			},
+			{
+				"name": "Shuttlecock",
+				"url": "/guides/shuttlecock",
 				"subnav": []
 			},
 			{
@@ -24,11 +54,6 @@
 				"subnav": []
 			}
 		]
-	},
-	{
-		"name": "About",
-		"url": "/about",
-		"subnav": []
 	},
 	{
 		"name": "Login",
