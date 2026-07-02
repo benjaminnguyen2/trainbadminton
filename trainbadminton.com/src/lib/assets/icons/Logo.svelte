@@ -1,23 +1,13 @@
 <svg
-	version="1.1"
-	id="Icons"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 32 32"
 	xml:space="preserve"
 	width="32"
 	height="32"
+	fill="var(--foreground-dark)"
+	stroke="none"
 >
-	<style type="text/css">
-		.st0 {
-			fill: none;
-			stroke: #000000;
-			stroke-width: 2;
-			stroke-linecap: round;
-			stroke-linejoin: round;
-			stroke-miterlimit: 10;
-		}
-	</style>
 	<g>
 		<path
 			d="M12.9,25.6c-0.1,0-0.2,0-0.3-0.1l-3.7-1.2c-0.3-0.1-0.5-0.3-0.6-0.6L6.9,20c-0.1-0.4,0-0.8,0.3-1.1l11.2-8.7
