@@ -1,53 +1,69 @@
 <script lang="ts">
-	import NavItem from "./NavItem.svelte";
 	import navs from "$lib/config/navigations.json";
-	import { page } from "$app/state";
 	import Logo from "$lib/assets/icons/Logo.svelte";
-
-	let active = $state(-1);
-
-	const items = navs.slice(0, -1);
-
-	$effect(() => {
-		active = items.findIndex((i) => i.url === page.params.method);
-	});
+	import { send, receive } from "$lib/transitions/transitions";
+	import NavDropdown from "./NavDropdown.svelte";
+	import NavElement from "./NavElement.svelte";
 </script>
 
 <nav>
 	<ul>
-		<li>
-			<div class="logo">
-				<Logo />
-				<h2>Badminton Trainer</h2>
-			</div>
+		<li class="logo">
+			<Logo />
+			<h2>Badminton Trainer</h2>
 		</li>
-		{#each items as item, i_index}
-			<li><a href={item.url}>{item.name}</a></li>
+		{#each navs as nav, index (index)}
+			<li>
+				<NavElement id={index} {send} {receive}>
+					{#if nav.subnav.length > 0}
+						<NavDropdown />
+					{:else}
+						<a href={nav.url}>{nav.name}</a>
+					{/if}
+				</NavElement>
+			</li>
 		{/each}
-		<li><button>{navs[navs.length - 1].name}</button></li>
 	</ul>
 </nav>
 
 <style>
-	nav {
-		padding: 1rem 0;
-	}
 	.logo {
 		display: flex;
 		flex-direction: row;
 		font-family: "Daggersquare", sans-serif;
 	}
 	ul {
-		list-style: none;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+		align-items: stretch;
 		padding: 0 1rem;
 		gap: 2rem;
+		position: relative;
+	}
+	li {
+		padding: 0 1rem;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	li:before {
+		content: "";
+		width: 100%;
+		height: calc(100% + 20px);
+		background: var(--foreground-light);
+		position: absolute;
+		bottom: 0;
+		left: 0.25rem;
+		z-index: -1;
+		clip-path: polygon(100% 20%, calc(100% - 2px) 30%, 0% 30%, 2px 20%);
 	}
 	h2 {
 		padding: 1rem 0;
 	}
-	ul:last-child {
+	li:nth-last-child(2) {
+		cursor: default;
+	}
+	li:last-of-type {
+		margin-left: auto;
 	}
 </style>
