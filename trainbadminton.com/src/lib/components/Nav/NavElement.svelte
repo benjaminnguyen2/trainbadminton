@@ -27,8 +27,9 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 60%;
 		z-index: -1;
 		display: block;
+		transform: translateY(30%) skewX(-10deg);
 	}
 </style>
