@@ -10,13 +10,13 @@
 	const equips = nav.subnav.slice(3, -1);
 </script>
 
-<div
+<button
 	onclick={() => {
 		showItems = !showItems;
 	}}
 >
 	{nav.name}
-</div>
+</button>
 {#if showItems}
 	<div class="dropdown" transition:slide={{ easing: quintInOut }}>
 		<ul>
