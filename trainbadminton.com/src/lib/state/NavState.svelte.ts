@@ -3,7 +3,7 @@ import { setContext, getContext } from "svelte";
 const KEY = Symbol();
 
 export class NavState {
-	highlight: number = $state(-1);
+	highlight: string = $state("/");
 
 	constructor() {
 		setContext(KEY, this);
@@ -13,7 +13,9 @@ export class NavState {
 		return getContext<NavState>(KEY);
 	}
 
-	set(input: number): void {
+	set(input: string): void {
 		this.highlight = input;
 	}
+
+	checkSubnav(input: string): void {}
 }

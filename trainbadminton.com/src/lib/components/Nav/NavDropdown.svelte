@@ -2,17 +2,26 @@
 	import navs from "$lib/config/navigations.json";
 	import { quintInOut } from "svelte/easing";
 	import { slide } from "svelte/transition";
+	import { NavState } from "$lib/state/NavState.svelte";
+	import { page } from "$app/state";
 
 	let nav = navs[2];
 	let showItems = $state(false);
 
+	const navstate = NavState.get();
 	const train = nav.subnav.slice(0, 3);
 	const equips = nav.subnav.slice(3, -1);
 </script>
 
 <button
 	onclick={() => {
-		showItems = !showItems;
+		if (showItems) {
+			navstate.set(page.url.pathname);
+			showItems = false;
+		} else {
+			navstate.set(nav.url);
+			showItems = true;
+		}
 	}}
 >
 	{nav.name}
