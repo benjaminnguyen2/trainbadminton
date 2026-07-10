@@ -11,6 +11,12 @@
 	const navstate = NavState.get();
 	const train = nav.subnav.slice(0, 3);
 	const equips = nav.subnav.slice(3, -1);
+
+	$effect(() => {
+		if (navstate.highlight != nav.url) {
+			showItems = false;
+		}
+	});
 </script>
 
 <button

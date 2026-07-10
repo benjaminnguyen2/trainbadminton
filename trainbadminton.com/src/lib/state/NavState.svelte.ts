@@ -14,8 +14,11 @@ export class NavState {
 	}
 
 	set(input: string): void {
-		this.highlight = input;
+		this.highlight = this.checkSubnav(input);
 	}
 
-	checkSubnav(input: string): void {}
+	checkSubnav(input: string): string {
+		const splitRoutes = input.split(/(?=\/)/);
+		return splitRoutes[0];
+	}
 }
