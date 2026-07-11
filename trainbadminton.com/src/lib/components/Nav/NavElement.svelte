@@ -30,6 +30,7 @@
 		height: 60%;
 		z-index: -1;
 		display: block;
+		opacity: 0.6;
 		transform: translateY(30%) skewX(-10deg);
 	}
 </style>
