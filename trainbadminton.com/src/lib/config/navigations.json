@@ -10,47 +10,48 @@
 		"subnav": []
 	},
 	{
-		"name": "Guides",
-		"url": "/guides",
+		"name": "Training",
+		"url": "/training",
 		"subnav": [
 			{
 				"name": "Skills",
-				"url": "/guides/skills",
+				"url": "/training/skills",
 				"subnav": []
 			},
 			{
 				"name": "Tactics",
-				"url": "/guides/tactics",
+				"url": "/training/tactics",
 				"subnav": []
 			},
 			{
 				"name": "Injury prevention",
-				"url": "/guides/prevention",
+				"url": "/training/prevention",
 				"subnav": []
-			},
+			}
+		]
+	},
+	{
+		"name": "Equipments",
+		"url": "/equipments",
+		"subnav": [
 			{
 				"name": "Racket",
-				"url": "/guides/racket",
+				"url": "/equipments/racket",
 				"subnav": []
 			},
 			{
 				"name": "String",
-				"url": "/guides/racket",
+				"url": "/equipments/racket",
 				"subnav": []
 			},
 			{
 				"name": "Shuttlecock",
-				"url": "/guides/shuttlecock",
+				"url": "/equipments/shuttlecock",
 				"subnav": []
 			},
 			{
 				"name": "Shoes",
-				"url": "/guides/shoes",
-				"subnav": []
-			},
-			{
-				"name": "Skills",
-				"url": "/guides/skills",
+				"url": "/equipments/shoes",
 				"subnav": []
 			}
 		]

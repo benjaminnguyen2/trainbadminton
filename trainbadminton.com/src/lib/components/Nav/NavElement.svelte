@@ -8,7 +8,7 @@
 </script>
 
 {#if nav.subnav.length > 0}
-	<NavDropdown />
+	<NavDropdown {nav} />
 {:else}
 	<a href={nav.url}>{nav.name}</a>
 {/if}
