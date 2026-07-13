@@ -3,6 +3,7 @@
 	import { slide } from "svelte/transition";
 	import { NavState } from "$lib/state/NavState.svelte";
 	import { page } from "$app/state";
+	import { clickOutside } from "$lib/utils/ClickDetect";
 
 	let { nav } = $props();
 	let showItems = $state(false);
@@ -17,7 +18,8 @@
 </script>
 
 <button
-	onclick={() => {
+	onclick={(e) => {
+		if (e.defaultPrevented) return;
 		if (showItems) {
 			navstate.set(page.url.pathname);
 			showItems = false;
@@ -30,7 +32,14 @@
 	{nav.name}
 </button>
 {#if showItems}
-	<div class="dropdown" transition:slide={{ easing: quintInOut }}>
+	<div
+		use:clickOutside={() => {
+			navstate.set(page.url.pathname);
+			showItems = false;
+		}}
+		class="dropdown"
+		transition:slide={{ easing: quintInOut }}
+	>
 		<ul>
 			{#each nav.subnav as t}
 				<li><a href={t.url}>{t.name}</a></li>
