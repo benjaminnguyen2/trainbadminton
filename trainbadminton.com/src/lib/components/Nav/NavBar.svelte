@@ -2,7 +2,6 @@
 	import navs from "$lib/config/navigations.json";
 	import Logo from "$lib/assets/icons/Logo.svelte";
 	import { send, receive } from "$lib/transitions/transitions";
-	import NavDropdown from "./NavDropdown.svelte";
 	import NavElement from "./NavElement.svelte";
 </script>
 
@@ -14,13 +13,7 @@
 		</li>
 		{#each navs as nav, index (index)}
 			<li>
-				<NavElement id={index} {send} {receive}>
-					{#if nav.subnav.length > 0}
-						<NavDropdown />
-					{:else}
-						<a href={nav.url}>{nav.name}</a>
-					{/if}
-				</NavElement>
+				<NavElement id={index} {nav} {send} {receive} />
 			</li>
 		{/each}
 	</ul>
@@ -49,13 +42,13 @@
 	li:before {
 		content: "";
 		width: 100%;
-		height: calc(100% + 20px);
+		height: 4px;
 		background: var(--foreground-light);
 		position: absolute;
-		bottom: 0;
+		top: 0;
 		left: 0.25rem;
 		z-index: -1;
-		clip-path: polygon(100% 20%, calc(100% - 2px) 30%, 0% 30%, 2px 20%);
+		transform: skewX(-10deg);
 	}
 	h2 {
 		padding: 1rem 0;

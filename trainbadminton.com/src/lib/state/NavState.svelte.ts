@@ -3,7 +3,7 @@ import { setContext, getContext } from "svelte";
 const KEY = Symbol();
 
 export class NavState {
-	highlight: number = $state(-1);
+	highlight: string = $state("/");
 
 	constructor() {
 		setContext(KEY, this);
@@ -13,7 +13,12 @@ export class NavState {
 		return getContext<NavState>(KEY);
 	}
 
-	set(input: number): void {
-		this.highlight = input;
+	set(input: string): void {
+		this.highlight = this.checkSubnav(input);
+	}
+
+	checkSubnav(input: string): string {
+		const splitRoutes = input.split(/(?=\/)/);
+		return splitRoutes[0];
 	}
 }
