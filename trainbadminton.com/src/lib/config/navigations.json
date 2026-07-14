@@ -3,5 +3,62 @@
 		"name": "Home",
 		"url": "/",
 		"subnav": []
+	},
+	{
+		"name": "About",
+		"url": "/about",
+		"subnav": []
+	},
+	{
+		"name": "Training",
+		"url": "/training",
+		"subnav": [
+			{
+				"name": "Skills",
+				"url": "/training/skills",
+				"subnav": []
+			},
+			{
+				"name": "Tactics",
+				"url": "/training/tactics",
+				"subnav": []
+			},
+			{
+				"name": "Injury prevention",
+				"url": "/training/prevention",
+				"subnav": []
+			}
+		]
+	},
+	{
+		"name": "Equipments",
+		"url": "/equipments",
+		"subnav": [
+			{
+				"name": "Racket",
+				"url": "/equipments/racket",
+				"subnav": []
+			},
+			{
+				"name": "String",
+				"url": "/equipments/racket",
+				"subnav": []
+			},
+			{
+				"name": "Shuttlecock",
+				"url": "/equipments/shuttlecock",
+				"subnav": []
+			},
+			{
+				"name": "Shoes",
+				"url": "/equipments/shoes",
+				"subnav": []
+			}
+		]
+	},
+	{
+		"name": "Login",
+		"url": "/login",
+		"subnav": []
 	}
 ]
