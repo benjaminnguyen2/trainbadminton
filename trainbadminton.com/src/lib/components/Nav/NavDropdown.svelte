@@ -80,9 +80,16 @@
 		width: max-content;
 		justify-content: space-evenly;
 		align-items: stretch;
-		border-left: 3px dashed var(--foreground-light);
-		padding: 0 0.5rem;
+		border-left: 3px solid var(--foreground-light);
+		border-bottom: 3px solid var(--foreground-light);
+		padding: 0.5rem;
 		background: var(--background);
+		background: linear-gradient(
+			90deg,
+			var(--background) 0%,
+			var(--background) 95%,
+			rgba(0, 0, 0, 0) 100%
+		);
 	}
 	a:hover {
 		color: var(--highlight);
