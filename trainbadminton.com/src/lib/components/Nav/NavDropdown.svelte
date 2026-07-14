@@ -10,6 +10,18 @@
 
 	const navstate = NavState.get();
 
+	function enableDropdown(): void {
+		if (!showItems) {
+			navstate.set(nav.url);
+			showItems = true;
+		}
+	}
+
+	function disableDropdown(): void {
+		navstate.set(page.url.pathname);
+		showItems = false;
+	}
+
 	$effect(() => {
 		if (navstate.highlight != nav.url) {
 			showItems = false;
@@ -20,13 +32,7 @@
 <button
 	onclick={(e) => {
 		if (e.defaultPrevented) return;
-		if (showItems) {
-			navstate.set(page.url.pathname);
-			showItems = false;
-		} else {
-			navstate.set(nav.url);
-			showItems = true;
-		}
+		enableDropdown();
 	}}
 >
 	{nav.name}
@@ -34,8 +40,7 @@
 {#if showItems}
 	<div
 		use:clickOutside={() => {
-			navstate.set(page.url.pathname);
-			showItems = false;
+			disableDropdown();
 		}}
 		class="dropdown"
 		transition:slide={{ easing: quintInOut }}
