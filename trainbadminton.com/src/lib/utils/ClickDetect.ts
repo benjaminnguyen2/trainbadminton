@@ -11,15 +11,14 @@ export const clickOutside: Action<HTMLElement, () => void> = (
 			!event.defaultPrevented
 		) {
 			callback();
-			event.preventDefault();
 		}
 	};
 
-	document.addEventListener("click", handleClick, true);
+	document.addEventListener("click", handleClick, false);
 
 	return {
 		destroy() {
-			document.removeEventListener("click", handleClick, true);
+			document.removeEventListener("click", handleClick, false);
 		},
 	};
 };

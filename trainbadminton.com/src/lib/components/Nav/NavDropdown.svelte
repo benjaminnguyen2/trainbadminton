@@ -31,8 +31,12 @@
 
 <button
 	onclick={(e) => {
-		if (e.defaultPrevented) return;
-		enableDropdown();
+		e.stopPropagation();
+		if (showItems) {
+			disableDropdown();
+		} else {
+			enableDropdown();
+		}
 	}}
 >
 	{nav.name}
@@ -78,6 +82,7 @@
 		align-items: stretch;
 		border-left: 3px dashed var(--foreground-light);
 		padding: 0 0.5rem;
+		background: var(--background);
 	}
 	a:hover {
 		color: var(--highlight);
