@@ -31,7 +31,8 @@ ul {
 a,
 p,
 li,
-button {
+button,
+.text {
 	color: var(--foreground-dark);
 	font-family: "Roboto", sans-serif;
 	font-optical-sizing: auto;
